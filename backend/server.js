@@ -4,15 +4,17 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+
+// Middleware
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(bodyParser.json());
 
-// Test de connexion
+// Test route
 app.get('/', (req, res) => {
-    res.send('Le serveur Node.js fonctionne correctement.');
+    res.send('Le serveur fonctionne correctement.');
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
-    console.log(`Le serveur est en cours d'exécution sur le port ${PORT}`);
+    console.log(`Le serveur est opérationnel sur le port ${PORT}`);
 });
