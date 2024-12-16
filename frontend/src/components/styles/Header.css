@@ -1,0 +1,49 @@
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Fond blanc */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.40); /* Ombre plus visible pour la limite */
+    z-index: 1000; /* Toujours visible au-dessus du reste */
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between; /* Espace entre le titre et les liens */
+    align-items: center; /* Centre verticalement les éléments */
+    transition: all 0.3s ease; /* Transition douce */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Légère bordure pour renforcer la limite */
+}
+
+/* Titre légèrement à gauche */
+.header .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%); /* Dégradé violet -> bleu */
+    -webkit-background-clip: text; /* Applique le dégradé uniquement au texte */
+    -webkit-text-fill-color: transparent; /* Rends le fond transparent pour voir le dégradé */
+    margin: 0;
+    text-align: left; /* Alignement à gauche */
+    flex: 1; /* Espace pour décaler les liens */
+    padding-left: 40px; /* Décalage supplémentaire vers la droite */
+}
+
+/* Navigation centrée */
+.nav-links {
+    display: flex;
+    justify-content: center; /* Centre les liens horizontalement */
+    gap: 20px; /* Espacement entre les liens */
+    flex: 2; /* Double espace pour garder les liens au centre */
+}
+
+.nav-links a {
+    color: #007bff; /* Bleu pour les liens */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #0056b3; /* Bleu plus foncé au survol */
+}

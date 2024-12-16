@@ -1,0 +1,226 @@
+/* === Structure principale === */
+.home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+    min-height: 100vh;
+}
+
+/* === Section fond et vagues === */
+.background-section {
+    position: relative;
+    width: 100%;
+    padding-bottom: 1vh; /* Augmente la hauteur totale de la section */
+    overflow: hidden;
+}
+
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15vh; /* Augmente la hauteur des vagues */
+    overflow: hidden;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* === Contenu principal === */
+.inner-content {
+    display: flex; /* Organisation en colonnes (texte + image) */
+    justify-content: space-between; /* Séparation entre texte et image */
+    align-items: center; /* Centre verticalement */
+    max-width: 1200px; /* Largeur maximale */
+    width: 100%; /* S'étend horizontalement */
+    padding: 120px 300px;
+}
+
+/* === Texte principal === */
+.text-content {
+    flex: 1; /* Texte occupe 50% de l'espace */
+    max-width: 600px; /* Largeur maximale du texte */
+    padding-right: 20px; /* Espacement entre texte et image */
+    text-align: left; /* Alignement à gauche */
+}
+
+.text-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.text-content ul {
+    list-style: none; /* Pas de puces */
+    padding: 0;
+}
+
+.text-content li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+
+
+.signup-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.signup-form input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-form button {
+    padding: 15px 20px;
+    background-color: #0079bf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form button:hover {
+    background-color: #005a9c;
+}
+
+/* === Image à droite === */
+.image-container {
+    flex: 1; /* Image occupe 50% de l'espace */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    max-width: 100%; /* Ajustez cette valeur si nécessaire */
+    height: auto; /* Maintient les proportions */
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* === Section outils === */
+.tools-section {
+    background: #ffffff;
+    padding: 6px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.tools-section h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.tools-section .tools-intro {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grille flexible */
+    gap: 20px;
+}
+
+.tool {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool:hover {
+    transform: translateY(-5px); /* Légère montée au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tool h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: rgba(84, 58, 183, 1); /* Couleur primaire */
+}
+
+.tool p {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* === Animation des vagues === */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* === Responsivité === */
+@media (max-width: 768px) {
+    .inner-content {
+        flex-direction: column; /* Passe en disposition verticale */
+        text-align: center; /* Texte centré */
+    }
+
+    .text-content {
+        margin-bottom: 20px;
+    }
+
+    .signup-wrapper {
+        flex-direction: column; /* Champs empilés */
+        gap: 15px; /* Espacement vertical */
+    }
+
+    .image-container {
+        margin-top: 20px;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+    }
+}
